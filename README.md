@@ -1,2 +1,1 @@
-# rsschool-cv
-Repo for RS School study projects
+# Repo for RS School study projects

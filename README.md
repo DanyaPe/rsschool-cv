@@ -1,1 +1,1 @@
-# Repo for RS School study projects
+# **[rsschool-cv](https://github.com/DanyaPe/rsschool-cv/cv "Link to the repository")**

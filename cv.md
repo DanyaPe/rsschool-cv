@@ -11,7 +11,7 @@
 * **Phone:** 8-960-998-9488
 * **E-mail:** danya.peko@yandex.ru
 * **Telegram:** @dzvorunov
-* **Discord:** justdenchik
+* **Discord:** Daniil Zvorunov(@DanyaPe) / justdenchik
 
 ----
 

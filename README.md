@@ -1,1 +1,1 @@
-# **[rsschool-cv](https://github.com/DanyaPe/rsschool-cv/cv "Link to the repository")**
+# **[rsschool-cv](https://github.com/DanyaPe/rsschool-cv/cv.md "Link to the repository")**

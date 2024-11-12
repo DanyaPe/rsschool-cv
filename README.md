@@ -1,1 +1,1 @@
-# **[rsschool-cv](https://danyape.github.io/rsschool-cv/cv "Link to CV")**
+# **[rsschool-cv](https://danyape.github.io/rsschool-cv/ "Link to CV")**

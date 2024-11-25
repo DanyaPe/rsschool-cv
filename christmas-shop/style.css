@@ -41,6 +41,7 @@
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     text-transform: uppercase;
+    margin: 0%;
 }
 
 a {
@@ -48,7 +49,9 @@ a {
     color: black;
 }
 
-header, .header_div, .header_menu_div {
+/* ------------------------------ Header style description ------------------------------ */
+
+.header_alignment {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -57,11 +60,18 @@ header, .header_div, .header_menu_div {
 
 header {
     justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-left: 82px;
+    padding-right: 82px;
 
+}
+
+.header_div {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    gap: 12px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .header_logo_link {
@@ -69,12 +79,17 @@ header {
     padding-right: 20px;
     padding-top: 8px;
     padding-bottom: 8px;
+    gap: 8px;
 }
 
 .header_logo {
     width: 24px;
     height: 24px;
     border-radius: 50%;
+}
+
+.header_menu {
+    display: flex;
 }
 
 .header_text {
@@ -89,7 +104,7 @@ header {
     padding-right: 20px;
     padding-top: 12px;
     padding-bottom: 12px;
-    border-radius: 10%;
+    border-radius: 15px;
 }
 
 .header_menu_item_div:hover {
@@ -98,33 +113,37 @@ header {
 }
 
 .header_hamburger_menu_icon {
-    border-radius: 10%;
+    border-radius: 20px;
     width: 40px;
     height: 40px;
 }
 
-main {
+/* ------------------------------ Hero section style description ------------------------------ */
+
+.hero_section {
     background-color: #ff4646;
-    border-radius: 2%;
-    background-image: url(./image/bg-snow.png);
-}
-
-.main_div {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-image: url(./image/bg-snow.png), url(./image/bg-ball.png);
+    background-size: contain;
+    background-position: top;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     display: flex;
-    align-items: center;
-    text-align: center;
     flex-direction: column;
+    gap: 12px;
 }
 
-.main_wish_div {
+.hero_section_div {
+    text-align: center;
     padding-top: 60px;
     padding-bottom: 60px;
     gap: 12px;
-    width: 426px;
-    height: 404px;
 }
 
-.main_wish_text {
+.hero_section_wish_text {
     font-family: Allura;
     font-size: 24px;
     font-weight: 400;
@@ -133,15 +152,517 @@ main {
     color: white;
 }
 
-.main_wish_text_bold {
+.hero_section_wish_text_bold {
     font-family: Montserrat-Semi-Bold;
     font-size: 32px;
     line-height: 150%;
-    letter-spacing: 18%;
+    color: white;
+    width: 100%;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.hero_section_button {
+    font-family: Montserrat-Semi-Bold;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 5%;
+    text-transform: uppercase;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    background-color: black;
     color: white;
 }
 
-.im_late {
-    display: block;
-    margin: auto;
+.hero_section_button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* ------------------------------ About section style description ------------------------------ */
+
+.about_section {
+    background-color: #ff4646;
+    background-image: url(./image/bg-snow.png);
+    background-size: contain;
+    background-position: top;
+    display: flex;
+    flex-direction: column;
+    padding-left: 82px;
+    padding-right: 82px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.about_section_div {
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+}
+
+.about_section_desc_div {
+    flex: 1;
+    text-align: left;
+}
+
+.about_section_text_div {
+    padding-left: 60px;
+    padding-right: 160px;
+    padding-top: 160px;
+    padding-bottom: 160px;
+    text-align: left;
+}
+
+.about_section_title_text {
+    font-family: Allura;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 1.2px;
+    color: red;
+    margin: 0%;
+}
+
+.about_section_bold_text {
+    font-family: Montserrat-Semi-Bold;
+    font-size: 24px;
+    line-height: 152%;
+    letter-spacing: 3.9px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.about_section_main_text {
+    font-family: Montserrat;
+    font-size: 16px;
+    line-height: 148%;
+    font-weight: 400;
+    margin: 0%;
+}
+
+.about_section_img_div {
+    flex: 1;
+    border-radius: 20px;
+    background-image: url(./image/santa.png);
+    background-size: cover;
+    background-position: center;
+}
+
+/* ------------------------------ Slider section style description ------------------------------ */
+
+.slider_section {
+    padding-left: 82px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #ff4646;
+    background-image: url(./image/bg-snow.png);
+    background-size: contain;
+    background-position: top;
+}
+
+.slider_section_div {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: center;
+}
+
+.slider_wish_text {
+    font-family: Allura;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 1.2px;
+    margin: 0%;
+    color: white;
+}
+
+.slider_wish_text_bold {
+    font-family: Montserrat-Semi-Bold;
+    font-size: 24px;
+    line-height: 152%;
+    letter-spacing: 3.9px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;
+    color: white;
+}
+
+.slider_row {
+    display: flex;
+    gap: 0px 20px;
+    overflow: hidden;
+}
+
+.slider_text {
+    font-family: Montserrat;
+    font-size: 80px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-top: 51px;
+    padding-bottom: 51px;
+    margin: 0%;
+    color: white;
+}
+
+.slider_img {
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.slider_buttons_div {
+    padding-left: 82px;
+    padding-right: 82px;
+    gap: 0px 20px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.slider_arrow_button {
+    height: 56px;
+    width: 56px;
+    border-radius: 20px;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+}
+
+.slider_arrow_button:hover {
+    background-color: white;
+}
+
+.slider_arrow_button:hover svg path {
+    stroke: #ff4646;
+}
+
+.slider_svg {
+    height: 24px;
+    width: 24px;
+}
+
+.slider_button_img {
+    height: 24px;
+    width: 24px;
+}
+
+/* ------------------------------ Best gifts section style description ------------------------------ */
+
+.best_gifts_section {
+    background-color: #ff4646;
+    background-image: url(./image/bg-snow.png);
+    background-size: contain;
+    background-position: top;
+}
+
+.best_gifts_section_div {
+    padding-right: 82px;
+    padding-left: 82px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.best_gifts_wish_text {
+    font-family: Allura;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 1.2px;
+    margin: 0%;
+    color: white;
+}
+
+.best_gifts_wish_text_bold {
+    font-family: Montserrat-Semi-Bold;
+    font-size: 24px;
+    line-height: 152%;
+    letter-spacing: 3.9px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;
+    color: white;
+}
+
+.best_gifts_cards_div {
+    display: flex;
+    column-gap: 12px;
+}
+
+.best_gifts_card {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ecf3f8;
+}
+
+.best_gifts_card:hover .best_gifts_card_text{
+    color: #ff4646;
+}
+
+.best_gifts_card_img {
+    width: 310px;
+    height: 230px;
+}
+
+.best_gifts_card_text_div {
+    gap: 0 8px;
+    padding: 20px;
+    text-align: left;
+    border-radius: 20px;
+    background-color: white;
+    flex: 1;
+}
+
+.best_gifts_card_color_text {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-top: 0%;
+}
+
+.text_for_harmony {
+    color: #ff43f7;
+}
+
+.text_for_work {
+    color: #4361ff;
+}
+
+.text_for_health {
+    color: #06a44f; 
+} 
+
+.best_gifts_card_text {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 152%;
+    letter-spacing: 1.28px;
+    text-transform: uppercase;
+    margin: 0%;
+}
+
+/* ------------------------------ CTA section style description ------------------------------ */
+
+.CTA {
+    background-color: #ff4646;
+    background-image: url(./image/bg-snow.png), url(./image/bg-forest.png);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    padding-left: 82px;
+    padding-right: 82px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 100%;
+}
+
+.CTA_section_div {
+    padding-left: 425px;
+    padding-right: 425px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.CTA_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.CTA_text_bold {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 152%;
+    letter-spacing: 3.84px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.CTA_text_cursiv {
+    font-family: Allura;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 1.2px;
+    color: white;
+}
+
+.CTA_timer_div {
+    padding-left: 32px;
+    padding-right: 32px;
+    gap: 0 8px;
+}
+
+.CTA_timer {
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 8px;
+    padding-bottom: 12px;
+    border-radius: 20px;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.CTA_timer_block {
+    width: 80px;
+    position: relative;
+}
+
+.CTA_timer_block > p {
+    margin: 0%;
+}
+
+.CTA_timer_block:not(:last-child)::after {
+    content: '';
+    height: 20px;
+    width: 1px;
+    background-color: white;
+    color: white;
+    opacity: 40%;
+    position: absolute;
+    top: 15px;
+    right: 0px;
+}
+
+.CTA_timer_block_number {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 152%;
+    letter-spacing: 3.84px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.CTA_timer_block_text {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: white;   
+}
+
+/* ------------------------------ Footer section style description ------------------------------ */
+
+footer {
+    background-color: white;
+}
+
+.footer_div {
+    padding-left: 82px;
+    padding-right: 82px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 60px 0;
+}
+
+.footer_href_div {
+    gap: 0 12px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.footer_href {
+    row-gap: 12px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #ecf3f8;
+    width: 100%;
+}
+
+.footer_href:hover {
+    color: #ff4646;
+}
+
+.footer_img {
+    height: 80px;
+    width: 80px;
+}
+
+.footer_href_numbers {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 152%;
+    letter-spacing: 3.84px;
+    text-transform: uppercase;
+    margin: 12px;
+}
+
+.footer_href_text {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 152%;
+    letter-spacing: 1.28px;
+    text-transform: uppercase;
+    margin: 0%;
+}
+
+.footer_social_href_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer_social_href {
+    padding: 8px;
+}
+
+.footer_social_href_img {
+    height: 24px;
+    width: 24px;
+}
+
+.footer_social_href:hover, .footer_social_href:hover svg path {
+    stroke: #ff4646;
+    color: #ff4646;
+}
+
+.footer_copyright_text {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 148%;
+}
+
+.footer_school_link {
+    font-family: Allura;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 1.2px;
+    margin: 0%;
 }

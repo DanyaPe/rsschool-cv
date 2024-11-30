@@ -1,0 +1,36 @@
+/* ------------------------------ Gifts section of gifts page style description ------------------------------ */
+
+.gifts_section {
+    background-image: url(./image/bg-garland.png);
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+}
+
+.gifts_section_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 20px;
+}
+
+.gifts_section_text_div {
+    gap: 12px 0;
+    padding-left: 505px;
+    padding-right: 505px;
+}
+
+.gifts_section_text {
+    color: white;
+}
+
+.gifts_section_menu a {
+    color: white;
+}
+
+.gifts_section_menu a:hover, .gifts_section_menu_item_active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}

@@ -1,16 +1,19 @@
 @media (min-width: 769px) {
     body {
-        max-width: 1440px;
+        display: flex;
+        flex-direction: column;
         margin: auto;
+        max-width: 1440px;
     }
     .header_hamburger_menu_icon {
         display: none;
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 380px) and (max-width: 768px) {
     body {
-        max-width: 768px;
+        display: flex;
+        flex-direction: column;
         margin: auto;
     }
     ul, li {
@@ -18,29 +21,95 @@
     }
 }
 
+/* ------------------------------ Fonts description ------------------------------ */
+
 @font-face {
     font-family: Montserrat-Regular;
     src: url(./fonts/Montserrat-Regular.ttf);
 }
 
 @font-face {
-    font-family: Montserrat-Bold;
-    src: url(./fonts/Montserrat-Bold.ttf);
-}
-
-@font-face {
-    font-family: Montserrat-Semi-Bold;
-    src: url(./fonts/Montserrat-SemiBold.ttf);
-}
-
-@font-face {
     font-family: Allura;
-    src: url(./fonts/Allura-Regular.ttf)
+    src: url(./fonts/Allura-Regular.ttf);
 }
 
-h1, h2, h3, h4, h5, h6 {
+.Montserrat-Action-Small {
+    font-family: Montserrat-Regular;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.Allura-Caption {
+    font-family: Allura;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 1.2px;
+}
+
+.Montserrat-Header1 {
+    font-family: Montserrat-Regular;
+    font-size: 32px;
+    line-height: 150%;
+    font-weight: 600;
+    letter-spacing: 5.76px;
+    text-transform: uppercase;
+}
+
+.Montserrat-Header2 {
+    font-family: Montserrat-Regular;
+    font-size: 24px;
+    line-height: 152%;
+    font-weight: 600;
+    letter-spacing: 3.84px;
+    text-transform: uppercase;
+}
+
+.Montserrat-Header3 {
+    font-family: Montserrat-Regular;
+    font-size: 16px;
+    line-height: 152%;
+    font-weight: 600;
+    letter-spacing: 1.28px;
+    text-transform: uppercase;
+}
+
+.Montserrat-Header4 {
+    font-family: Montserrat-Regular;
+    font-size: 12px;
+    line-height: 130%;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.Montserrat-Paragraph {
+    font-family: Montserrat-Regular;
+    font-size: 16px;
+    line-height: 148%;
+    font-weight: 400;
+}
+
+.Montserrat-Action-Large {
+    font-family: Montserrat-Regular;
+    font-size: 24px;
+    line-height: 152%;
+    font-weight: 600;
+    letter-spacing: 3.84px;
+    text-transform: uppercase;
+}
+
+.Montserrat-Slider-Text {
+    font-family: Montserrat-Regular;
+    font-size: 80px;
     font-weight: 600;
     text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6, p {
     margin: 0%;
 }
 
@@ -51,38 +120,38 @@ a {
 
 /* ------------------------------ Header style description ------------------------------ */
 
-.header_alignment {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0%;
-}
-
 header {
     justify-content: space-between;
     padding-left: 82px;
     padding-right: 82px;
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0%;
+    gap: 0 8px;
 }
 
 .header_div {
     padding-top: 12px;
     padding-bottom: 12px;
-    gap: 12px;
+    column-gap: 12px;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
 .header_logo_link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0 8px;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 8px;
     padding-bottom: 8px;
-    gap: 8px;
 }
 
-.header_logo {
+.header_logo_link img {
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -90,16 +159,12 @@ header {
 
 .header_menu {
     display: flex;
+    flex-direction: row;
+    align-items: end;
+    column-gap: 8px;
 }
 
-.header_text {
-    font-family: Montserrat-Semi-Bold;
-    font-size: 12px;
-    line-height: 130%;
-    letter-spacing: 0.6px;
-}
-
-.header_menu_item_div {
+.header_menu a {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 12px;
@@ -107,8 +172,16 @@ header {
     border-radius: 15px;
 }
 
-.header_menu_item_div:hover {
-    background-color: #ffc6c6;
+.header_menu_item_div {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 12px;
+}
+
+.header_menu a:hover, .header_menu_item_active {
+    background-color: rgba(255, 70, 70, 0.2);
     color: #ff4646;
 }
 
@@ -118,58 +191,52 @@ header {
     height: 40px;
 }
 
-/* ------------------------------ Hero section style description ------------------------------ */
+/* ------------------------------ All section style description ------------------------------ */
 
-.hero_section {
+section {
     background-color: #ff4646;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    background-image: url(./image/bg-snow.png), url(./image/bg-ball.png);
-    background-size: contain;
-    background-position: top;
+    background-image: url(./image/bg-snow.png);
+    background-size: 100% 100%;
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 60px;
     padding-bottom: 60px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+
+/* ------------------------------ Hero section style description ------------------------------ */
+
+.hero_section {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-image: url(./image/bg-ball.png), url(./image/bg-snow.png);
+    background-size: cover;
+    background-position: center;
 }
 
 .hero_section_div {
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     padding-top: 60px;
     padding-bottom: 60px;
-    gap: 12px;
+    row-gap: 12px;
 }
 
 .hero_section_wish_text {
-    font-family: Allura;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 100%;
-    letter-spacing: 5%;
     color: white;
 }
 
 .hero_section_wish_text_bold {
-    font-family: Montserrat-Semi-Bold;
-    font-size: 32px;
-    line-height: 150%;
     color: white;
-    width: 100%;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    font-weight: 600;
 }
 
 .hero_section_button {
-    font-family: Montserrat-Semi-Bold;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 130%;
-    letter-spacing: 5%;
-    text-transform: uppercase;
     padding-left: 32px;
     padding-right: 32px;
     padding-top: 20px;
@@ -187,16 +254,8 @@ header {
 /* ------------------------------ About section style description ------------------------------ */
 
 .about_section {
-    background-color: #ff4646;
-    background-image: url(./image/bg-snow.png);
-    background-size: contain;
-    background-position: top;
-    display: flex;
-    flex-direction: column;
     padding-left: 82px;
     padding-right: 82px;
-    padding-top: 60px;
-    padding-bottom: 60px;
 }
 
 .about_section_div {
@@ -207,108 +266,71 @@ header {
 
 .about_section_desc_div {
     flex: 1;
-    text-align: left;
 }
 
 .about_section_text_div {
-    padding-left: 60px;
-    padding-right: 160px;
-    padding-top: 160px;
-    padding-bottom: 160px;
+    display: flex;
+    flex-direction: column;
     text-align: left;
+    row-gap: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    width: 426px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 .about_section_title_text {
-    font-family: Allura;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 100%;
-    letter-spacing: 1.2px;
     color: red;
-    margin: 0%;
-}
-
-.about_section_bold_text {
-    font-family: Montserrat-Semi-Bold;
-    font-size: 24px;
-    line-height: 152%;
-    letter-spacing: 3.9px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-.about_section_main_text {
-    font-family: Montserrat;
-    font-size: 16px;
-    line-height: 148%;
-    font-weight: 400;
-    margin: 0%;
 }
 
 .about_section_img_div {
     flex: 1;
     border-radius: 20px;
     background-image: url(./image/santa.png);
-    background-size: cover;
-    background-position: center;
+    background-size: 100% 100%;
 }
 
 /* ------------------------------ Slider section style description ------------------------------ */
 
 .slider_section {
+    padding-right: 82px;
     padding-left: 82px;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    background-color: #ff4646;
-    background-image: url(./image/bg-snow.png);
-    background-size: contain;
-    background-position: top;
 }
 
 .slider_section_div {
     display: flex;
     flex-direction: column;
+    row-gap: 20px;
     align-items: left;
+}
+
+.slider_section_text_div {
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    row-gap: 12px;
 }
 
 .slider_wish_text {
-    font-family: Allura;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 100%;
-    letter-spacing: 1.2px;
-    margin: 0%;
     color: white;
 }
 
 .slider_wish_text_bold {
-    font-family: Montserrat-Semi-Bold;
-    font-size: 24px;
-    line-height: 152%;
-    letter-spacing: 3.9px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-top: 20px;
     color: white;
 }
 
 .slider_row {
     display: flex;
-    gap: 0px 20px;
+    align-items: center;
     overflow: hidden;
+    margin-right: -82px;
+    gap: 0px 20px;
 }
 
 .slider_text {
-    font-family: Montserrat;
-    font-size: 80px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding-top: 51px;
-    padding-bottom: 51px;
-    margin: 0%;
     color: white;
 }
 
@@ -319,9 +341,7 @@ header {
 }
 
 .slider_buttons_div {
-    padding-left: 82px;
-    padding-right: 82px;
-    gap: 0px 20px;
+    column-gap: 20px;
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
@@ -351,135 +371,107 @@ header {
     width: 24px;
 }
 
-.slider_button_img {
-    height: 24px;
-    width: 24px;
-}
-
 /* ------------------------------ Best gifts section style description ------------------------------ */
 
-.best_gifts_section {
-    background-color: #ff4646;
-    background-image: url(./image/bg-snow.png);
-    background-size: contain;
-    background-position: top;
+.best_gifts_section_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
 }
 
-.best_gifts_section_div {
-    padding-right: 82px;
-    padding-left: 82px;
-    padding-top: 60px;
-    padding-bottom: 60px;
+.best_gifts_section_text_div {
     display: flex;
     flex-direction: column;
     text-align: center;
+    row-gap: 12px;
 }
 
 .best_gifts_wish_text {
-    font-family: Allura;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 100%;
-    letter-spacing: 1.2px;
-    margin: 0%;
     color: white;
 }
 
 .best_gifts_wish_text_bold {
-    font-family: Montserrat-Semi-Bold;
-    font-size: 24px;
-    line-height: 152%;
-    letter-spacing: 3.9px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-top: 20px;
     color: white;
 }
 
 .best_gifts_cards_div {
     display: flex;
-    column-gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
 }
 
-.best_gifts_card {
+.best_gifts_card_for_work, .best_gifts_card_for_health, .best_gifts_card_for_harmony {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     background-color: #ecf3f8;
+    width: 310px;
+    height: 342px;
 }
 
-.best_gifts_card:hover .best_gifts_card_text{
-    color: #ff4646;
-}
-
-.best_gifts_card_img {
+.best_gifts_card_for_work div, .best_gifts_card_for_health div, .best_gifts_card_for_harmony div {
+    background-size: contain;
     width: 310px;
     height: 230px;
 }
 
-.best_gifts_card_text_div {
-    gap: 0 8px;
-    padding: 20px;
+.best_gifts_card_for_work span, .best_gifts_card_for_health span, .best_gifts_card_for_harmony span {
+    display: flex;
+    flex-direction: column;
     text-align: left;
+    gap: 8px 0;
+    padding: 20px;
     border-radius: 20px;
     background-color: white;
     flex: 1;
 }
 
-.best_gifts_card_color_text {
-    font-family: Montserrat;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 130%;
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
-    margin-top: 0%;
+.best_gifts_card_for_work:hover, .best_gifts_card_for_health:hover, .best_gifts_card_for_harmony:hover {
+    color: #ff4646;
 }
 
-.text_for_harmony {
-    color: #ff43f7;
-}
-
-.text_for_work {
+.best_gifts_card_for_work h3::before {
+    content: 'For work';
     color: #4361ff;
 }
 
-.text_for_health {
-    color: #06a44f; 
-} 
+.best_gifts_card_for_health h3::before {
+    content: 'For health';
+    color: #06a44f;
+}
 
-.best_gifts_card_text {
-    font-family: Montserrat;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 152%;
-    letter-spacing: 1.28px;
-    text-transform: uppercase;
-    margin: 0%;
+.best_gifts_card_for_harmony h3::before {
+    content: 'For harmony';
+    color: #ff43f7;
+}
+
+.best_gifts_card_for_work div {
+    background-image: url(./image/gift-for-work.png);
+}
+
+.best_gifts_card_for_health div {
+    background-image: url(./image/gift-for-health.png);
+}
+
+.best_gifts_card_for_harmony div {
+    background-image: url(./image/gift-for-harmony.png);
 }
 
 /* ------------------------------ CTA section style description ------------------------------ */
 
 .CTA {
-    background-color: #ff4646;
     background-image: url(./image/bg-snow.png), url(./image/bg-forest.png);
-    background-size: contain;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    padding-left: 82px;
-    padding-right: 82px;
-    padding-top: 60px;
-    padding-bottom: 60px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    height: 100%;
 }
 
 .CTA_section_div {
-    padding-left: 425px;
-    padding-right: 425px;
     padding-top: 60px;
     padding-bottom: 60px;
+    padding-left: 82px;
+    padding-right: 82px;
 }
 
 .CTA_div {
@@ -487,34 +479,26 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 0 20px;
+    row-gap: 20px;
     padding-top: 60px;
     padding-bottom: 60px;
+    padding-left: 417px;
+    padding-right: 417px;
 }
 
 .CTA_text_bold {
-    font-family: Montserrat;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 152%;
-    letter-spacing: 3.84px;
-    text-transform: uppercase;
     color: white;
 }
 
 .CTA_text_cursiv {
-    font-family: Allura;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 100%;
-    letter-spacing: 1.2px;
     color: white;
 }
 
 .CTA_timer_div {
-    padding-left: 32px;
-    padding-right: 32px;
-    gap: 0 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 8px;
 }
 
 .CTA_timer {
@@ -524,16 +508,13 @@ header {
     padding-bottom: 12px;
     border-radius: 20px;
     display: flex;
+    justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.4);
 }
 
 .CTA_timer_block {
     width: 80px;
     position: relative;
-}
-
-.CTA_timer_block > p {
-    margin: 0%;
 }
 
 .CTA_timer_block:not(:last-child)::after {
@@ -549,22 +530,10 @@ header {
 }
 
 .CTA_timer_block_number {
-    font-family: Montserrat;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 152%;
-    letter-spacing: 3.84px;
-    text-transform: uppercase;
     color: white;
 }
 
 .CTA_timer_block_text {
-    font-family: Montserrat;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 130%;
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
     color: white;   
 }
 
@@ -612,29 +581,14 @@ footer {
 }
 
 .footer_href_numbers {
-    font-family: Montserrat;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 152%;
-    letter-spacing: 3.84px;
-    text-transform: uppercase;
     margin: 12px;
-}
-
-.footer_href_text {
-    font-family: Montserrat;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 152%;
-    letter-spacing: 1.28px;
-    text-transform: uppercase;
-    margin: 0%;
 }
 
 .footer_social_href_div {
     display: flex;
     flex-direction: column;
     align-items: center;
+    row-gap: 12px;
 }
 
 .footer_social_href {
@@ -649,20 +603,4 @@ footer {
 .footer_social_href:hover, .footer_social_href:hover svg path {
     stroke: #ff4646;
     color: #ff4646;
-}
-
-.footer_copyright_text {
-    font-family: Montserrat;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 148%;
-}
-
-.footer_school_link {
-    font-family: Allura;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 100%;
-    letter-spacing: 1.2px;
-    margin: 0%;
 }

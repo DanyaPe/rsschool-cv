@@ -17,9 +17,7 @@
 }
 
 .gifts_section_text_div {
-    gap: 12px 0;
-    padding-left: 505px;
-    padding-right: 505px;
+    row-gap: 12px;
 }
 
 .gifts_section_text {

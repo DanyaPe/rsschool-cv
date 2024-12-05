@@ -11,31 +11,31 @@
 <body>
     <header>
         <div class="header_div">
-            <a href="#" class="header_logo_link">
+            <a href="./index.html" class="header_logo_link">
                 <img src="./image/logo.jpg" alt="logo">
                 <h1 class="Montserrat-Action-Small">THE GIFTS</h1>
             </a>
             <nav class="header_menu">
                 <div class="header_menu_div">
-                   <ul class="header_menu_list" type="none">
+                   <ul class="header_menu_list">
                         <li>
                           <a href="./gifts.html" class="Montserrat-Action-Small">Gifts</a>
                         </li>
                         <li>
-                           <a href="#" class="Montserrat-Action-Small">About</a>
+                           <a href="#about" class="Montserrat-Action-Small">About</a>
                         </li>
                          <li>
-                            <a href="#" class="Montserrat-Action-Small">Best</a>
+                            <a href="#best" class="Montserrat-Action-Small">Best</a>
                         </li>
                         <li>
-                            <a href="#" class="Montserrat-Action-Small">Contacts</a>
+                            <a href="#contacts" class="Montserrat-Action-Small">Contacts</a>
                         </li>
                     </ul>
                 </div>
                 <div class="hamburger_menu_div">
-                    <button class="hamburger_menu_button" onclick="open_hamburger_menu(this)">
-                        <div class="hamburger_button_bar1"></div>
-                        <div class="hamburger_button_bar2"></div>
+                    <button class="hamburger_menu_button hamburger_menu_view" onclick="open_hamburger_menu()">
+                        <span class="hamburger_button_bar1"></span>
+                        <span class="hamburger_button_bar2"></span>
                     </button>
                 </div>
             </nav>
@@ -44,10 +44,10 @@
     <main>
         <div class="hamburger_menu_pop_up">
             <div class="hamburger_menu_pop_up_div">
-                <a href="" class="Montserrat-Action-Large">Gifts</a>
-                <a href="" class="Montserrat-Action-Large">About</a>
-                <a href="" class="Montserrat-Action-Large">Best</a>
-                <a href="" class="Montserrat-Action-Large">Contacts</a>
+                <a href="./gifts.html" class="Montserrat-Action-Large" onclick="open_hamburger_menu()">Gifts</a>
+                <a href="#about" class="Montserrat-Action-Large" onclick="open_hamburger_menu()">About</a>
+                <a href="#best" class="Montserrat-Action-Large" onclick="open_hamburger_menu()">Best</a>
+                <a href="#contacts" class="Montserrat-Action-Large" onclick="open_hamburger_menu()">Contacts</a>
             </div>
         </div>
         <section class="hero_section">
@@ -68,7 +68,7 @@
                 </p> 
             </div>
         </section>
-        <section class="about_section">
+        <section class="about_section" id="about">
             <div class="about_section_div">
                 <div class="about_section_desc_div">
                     <div class="about_section_text_div">
@@ -131,7 +131,7 @@
                 </div>
             </div>
         </section>
-        <section class="best_gifts_section">
+        <section class="best_gifts_section" id="best">
             <div class="best_gifts_section_div">
                 <div class="best_gifts_section_text_div">
                     <p class="best_gifts_wish_text Allura-Caption">
@@ -143,44 +143,44 @@
                 </div>
                 <div class="best_gifts_cards_div">
                     <div class="best_gifts_card_for_work">
-                        <div></div>
-                        <span>
+                        <span></span>
+                        <div>
                             <h3 class="Montserrat-Header4">
                             </h3>
                             <h4 class="Montserrat-Header3">
                                 Console.log guru
                             </h4>
-                        </span>
+                        </div>
                     </div>
                     <div class="best_gifts_card_for_health">
-                        <div></div>
-                        <span>
+                        <span></span>
+                        <div>
                             <h3 class="Montserrat-Header4">
                             </h3>
                             <h4 class="Montserrat-Header3">
                                 Hydration bot
                             </h4>
-                        </span>
+                        </div>
                     </div>
                     <div class="best_gifts_card_for_work">
-                        <div></div>
-                        <span>
+                        <span></span>
+                        <div>
                             <h3 class="Montserrat-Header4">
                             </h3>
                             <h4 class="Montserrat-Header3">
                                 Merge Master
                             </h4>
-                        </span>
+                        </div>
                     </div>
                     <div class="best_gifts_card_for_harmony">
-                        <div></div>
-                        <span>
+                        <span></span>
+                        <div>
                             <h3 class="Montserrat-Header4">
                             </h3>
                             <h4 class="Montserrat-Header3">
                                 Spontaneous coding philosopher
                             </h4>
-                        </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -239,7 +239,7 @@
             </div>
         </section>
     </main>
-    <footer>
+    <footer id="contacts">
         <div class="footer_div">
             <div class="footer_href_div">
                 <a href="tel:+375(29)111-22-33" class="footer_href">

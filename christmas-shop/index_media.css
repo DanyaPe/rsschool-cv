@@ -29,13 +29,13 @@
         padding-left: 82px;
     }
 
-    .slider_row {
-        margin-right: -82px;
-    }
-
     .footer_div {
         padding-left: 82px;
         padding-right: 82px;
+    }
+
+    .up_arrow_button {
+        display: none;
     }
 }
 

@@ -100,6 +100,30 @@ a {
     color: black;
 }
 
+:hover {
+    transition: background-color 0.7s, color 0.7s;
+}
+
+.up_arrow_button {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    border: 1px solid #ff4646;
+    background-color: white;
+    position: fixed;
+    right: -100%;
+    transition: right 1s;
+    z-index: 9999;
+    bottom: 10px;
+}
+
+.up_arrow_button_active {
+    right: 10px;
+}
+
 /* ------------------------------ Header style description ------------------------------ */
 
 header {
@@ -241,7 +265,8 @@ header {
 
 main {
     border-radius: 15px;
-    background-color: #ff4646;    
+    background-color: #ff4646;
+    overflow: hidden;    
 }
 
 section {
@@ -366,8 +391,13 @@ section {
 .slider_row {
     display: flex;
     align-items: center;
-    overflow: hidden;
     gap: 0px 20px;
+}
+
+.slider_row * {
+    position: relative;
+    right: 0px;
+    transition: right 1s;
 }
 
 .slider_text {
@@ -398,12 +428,20 @@ section {
     background: none;
 }
 
-.slider_arrow_button:hover {
+.slider_arrow_button_active:hover {
     background-color: white;
 }
 
-.slider_arrow_button:hover svg path {
+.slider_arrow_button_active:hover svg path {
     stroke: #ff4646;
+}
+
+.slider_arrow_button_active {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+.slider_arrow_button_disabled {
+   border-color: rgba(255, 255, 255, 0.4);
 }
 
 .slider_svg {

@@ -85,6 +85,12 @@
         width: 100%;
     }
 
+    .gift_modal {
+        max-width: none;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
     .footer_href_div {
         flex-direction: column;
         row-gap: 12px;

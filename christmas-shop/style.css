@@ -489,17 +489,11 @@ section {
     height: 342px;
 }
 
-.best_gifts_card_for_work span, .best_gifts_card_for_health span, .best_gifts_card_for_harmony span {
-    background-size: contain;
-    width: 310px;
-    height: 230px;
-}
-
 .best_gifts_card_for_work div, .best_gifts_card_for_health div, .best_gifts_card_for_harmony div {
     display: flex;
     flex-direction: column;
     text-align: left;
-    gap: 8px 0;
+    row-gap: 8px;
     padding: 20px;
     border-radius: 20px;
     background-color: white;
@@ -510,31 +504,89 @@ section {
     color: #ff4646;
 }
 
-.best_gifts_card_for_work h3::before {
+.best_gifts_card_for_work span:nth-child(2), .best_gifts_card_for_health span:nth-child(2), .best_gifts_card_for_harmony span:nth-child(2) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.best_gifts_card_for_work span:nth-child(1)::before {
     content: 'For work';
     color: #4361ff;
 }
 
-.best_gifts_card_for_health h3::before {
+.best_gifts_card_for_health span:nth-child(1)::before {
     content: 'For health';
     color: #06a44f;
 }
 
-.best_gifts_card_for_harmony h3::before {
+.best_gifts_card_for_harmony span:nth-child(1)::before {
     content: 'For harmony';
     color: #ff43f7;
 }
 
-.best_gifts_card_for_work span {
-    background-image: url(./image/gift-for-work.png);
+.gift_modal {
+    background-color: #ecf3f8;
+    border-radius: 20px;
+    border: none;
+    padding: 0;
+    max-width: 400px;
 }
 
-.best_gifts_card_for_health span {
-    background-image: url(./image/gift-for-health.png);
+.gift_modal::backdrop {
+    background: rgba(24, 28, 41, 0.8);
 }
 
-.best_gifts_card_for_harmony span {
-    background-image: url(./image/gift-for-harmony.png);
+.gift_modal:focus-visible {
+    outline: none;
+}
+
+.modal_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal_description_div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.modal_description_div > div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    row-gap: 8px;
+}
+
+.modal_indicators_div {
+    display: flex;
+    flex-direction: row;
+    column-gap: 12px;
+}
+
+.modal_snowflakes_div {
+    display: flex;
+    flex-direction: row;
+    column-gap: 8px;
+}
+
+.modal_window_cross {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+}
+
+.modal_window_cross:focus-visible {
+    outline: none;
 }
 
 /* ------------------------------ CTA section style description ------------------------------ */

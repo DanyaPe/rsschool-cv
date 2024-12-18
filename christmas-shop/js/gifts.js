@@ -5,21 +5,25 @@ function gift_cards_list(json_data_mas, cards_div_class_name) {
     json_data_mas.forEach(el => {
         const div = document.createElement('div');
         const img = document.createElement('img');
+        let color_text = '';
         switch (el.category) {
             case 'For Work': 
                 div.className = 'best_gifts_card_for_work';
                 img.src = './image/gift-for-work.png';
                 img.alt = 'gift-for-work';
+                color_text = '#4361ff';
                 break;
             case 'For Health': 
                 div.className = 'best_gifts_card_for_health';
                 img.src = './image/gift-for-health.png';
                 img.alt = 'gift-for-health';
+                color_text = '#06a44f';
                 break;
             case 'For Harmony': 
                 div.className = 'best_gifts_card_for_harmony';
                 img.src = './image/gift-for-harmony.png';
                 img.alt = 'gift-for-harmony';
+                color_text = '#ff43f7';
                 break;
         };
         div.append(img);
@@ -32,29 +36,50 @@ function gift_cards_list(json_data_mas, cards_div_class_name) {
         span2.className = 'Montserrat-Header3';
         span2.innerHTML = el.name;
         inner_div.append(span2);
-        /*div.addEventListener('click', () => {
-            document.querySelector('.modal_div > span').style.backgroundImage = window.getComputedStyle(span).getPropertyValue('background-image');
-            document.querySelector('.modal_description_div > div > h4').textContent = el.category;
-            document.querySelector('.modal_description_div > div > h3').textContent = el.name;
+        div.addEventListener('click', () => {
+            document.querySelector('.img_div > img').src = img.src;
+            document.querySelector('.img_div > img').alt = img.alt;
+            document.querySelector('.modal_description_div > div > span:nth-child(1)').textContent = el.category;
+            document.querySelector('.modal_description_div > div > span:nth-child(1)').style.color = color_text;
+            document.querySelector('.modal_description_div > div > span:nth-child(2)').textContent = el.name;
             document.querySelector('.modal_description_div > div > p').textContent = el.description;
             document.querySelectorAll('.modal_indicators_div > p:nth-child(2)')[0].textContent = el.superpowers.live;
+            let snowflakes = document.querySelectorAll('.modal_indicators_div')[0].querySelectorAll('svg');
+            for(n = 0; n < Number(el.superpowers.live.slice(1,2)); n++) {
+                snowflakes[n].setAttribute('opacity', '1');
+            };
             document.querySelectorAll('.modal_indicators_div > p:nth-child(2)')[1].textContent = el.superpowers.create;
+            snowflakes = document.querySelectorAll('.modal_indicators_div')[1].querySelectorAll('svg');
+            for(n = 0; n < Number(el.superpowers.create.slice(1,2)); n++) {
+                snowflakes[n].setAttribute('opacity', '1');
+            };
             document.querySelectorAll('.modal_indicators_div > p:nth-child(2)')[2].textContent = el.superpowers.love;
+            snowflakes = document.querySelectorAll('.modal_indicators_div')[2].querySelectorAll('svg');
+            for(n = 0; n < Number(el.superpowers.love.slice(1,2)); n++) {
+                snowflakes[n].setAttribute('opacity', '1');
+            };
             document.querySelectorAll('.modal_indicators_div > p:nth-child(2)')[3].textContent = el.superpowers.dream;
+            snowflakes = document.querySelectorAll('.modal_indicators_div')[3].querySelectorAll('svg');
+            for(n = 0; n < Number(el.superpowers.dream.slice(1,2)); n++) {
+                snowflakes[n].setAttribute('opacity', '1');
+            };
             modal.showModal();
-            //document.body.classList.toggle('body_fixed');
-        });*/
+            document.body.classList.toggle('body_fixed');
+        });
         document.getElementsByClassName(cards_div_class_name)[0].append(div);
     });
 };
 
 //Close modal function for modal cross
 function close_modal_window() {
+    document.querySelectorAll('.modal_indicators_div svg').forEach(el => {el.setAttribute('opacity', '0.3');});
+    document.body.classList.toggle('body_fixed');
     document.getElementsByClassName('gift_modal')[0].close();
 }
 
 //Add random gifts on index.html
 function random_gifts(json_data_mas, amount, div_class_name) {
+    const modal = document.getElementsByClassName('gift_modal')[0];
     const numbers_mas = [];
     while(numbers_mas.length < 4) {
         const el_number = Math.floor(Math.random() * (json_data_mas.length - 1));
@@ -65,21 +90,25 @@ function random_gifts(json_data_mas, amount, div_class_name) {
         const el_data = json_data_mas[numbers_mas[i]];
         const div = document.createElement('div');
         const img = document.createElement('img');
+        let color_text = '';
         switch (el_data.category) {
             case 'For Work': 
                 div.className = 'best_gifts_card_for_work';
                 img.src = './image/gift-for-work.png';
                 img.alt = 'gift-for-work';
+                color_text = '#4361ff';
                 break;
             case 'For Health': 
                 div.className = 'best_gifts_card_for_health';
                 img.src = './image/gift-for-health.png';
                 img.alt = 'gift-for-health';
+                color_text = '#06a44f';
                 break;
             case 'For Harmony': 
                 div.className = 'best_gifts_card_for_harmony';
                 img.src = './image/gift-for-harmony.png';
                 img.alt = 'gift-for-harmony';
+                color_text = '#ff43f7';
                 break;
         };
         div.append(img);
@@ -92,6 +121,36 @@ function random_gifts(json_data_mas, amount, div_class_name) {
         span2.className = 'Montserrat-Header3';
         span2.innerHTML = el_data.name;
         inner_div.append(span2);
+        div.addEventListener('click', () => {
+            document.querySelector('.img_div > img').src = img.src;
+            document.querySelector('.img_div > img').alt = img.alt;
+            document.querySelector('.modal_description_div > div > span:nth-child(1)').textContent = el_data.category;
+            document.querySelector('.modal_description_div > div > span:nth-child(1)').style.color = color_text;
+            document.querySelector('.modal_description_div > div > span:nth-child(2)').textContent = el_data.name;
+            document.querySelector('.modal_description_div > div > p').textContent = el_data.description;
+            document.querySelectorAll('.modal_indicators_div > p:nth-child(2)')[0].textContent = el_data.superpowers.live;
+            let snowflakes = document.querySelectorAll('.modal_indicators_div')[0].querySelectorAll('svg');
+            for(n = 0; n < Number(el_data.superpowers.live.slice(1,2)); n++) {
+                snowflakes[n].setAttribute('opacity', '1');
+            };
+            document.querySelectorAll('.modal_indicators_div > p:nth-child(2)')[1].textContent = el_data.superpowers.create;
+            snowflakes = document.querySelectorAll('.modal_indicators_div')[1].querySelectorAll('svg');
+            for(n = 0; n < Number(el_data.superpowers.create.slice(1,2)); n++) {
+                snowflakes[n].setAttribute('opacity', '1');
+            };
+            document.querySelectorAll('.modal_indicators_div > p:nth-child(2)')[2].textContent = el_data.superpowers.love;
+            snowflakes = document.querySelectorAll('.modal_indicators_div')[2].querySelectorAll('svg');
+            for(n = 0; n < Number(el_data.superpowers.love.slice(1,2)); n++) {
+                snowflakes[n].setAttribute('opacity', '1');
+            };
+            document.querySelectorAll('.modal_indicators_div > p:nth-child(2)')[3].textContent = el_data.superpowers.dream;
+            snowflakes = document.querySelectorAll('.modal_indicators_div')[3].querySelectorAll('svg');
+            for(n = 0; n < Number(el_data.superpowers.dream.slice(1,2)); n++) {
+                snowflakes[n].setAttribute('opacity', '1');
+            };
+            modal.showModal();
+            document.body.classList.toggle('body_fixed');
+        });
         document.getElementsByClassName(div_class_name)[0].append(div);
     };
 };

@@ -11,4 +11,5 @@ function timer() {
     document.getElementsByClassName('CTA_timer_block_number')[2].textContent = minutes;
     document.getElementsByClassName('CTA_timer_block_number')[3].textContent = seconds;
 };
-if(window.location.pathname == '/christmas-shop/index.html') setInterval(function() {timer()}, 1000);
+
+setInterval(function() {timer()}, 1000);

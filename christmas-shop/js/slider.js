@@ -1,15 +1,19 @@
 // Slider animate---------------------------------------------------------------------------------------------------
 function get_shifts(slider_class) {
-    const slider = document.querySelector(slider_class);
-    var slider_elements = Array.from(slider.children);
+    //Get slider elements and set their right position
+    const slider_elements = Array.from(document.querySelector(slider_class).children);
     slider_elements.forEach(el => {
-        el.style.right = getComputedStyle(el).right;
+        el.style.right = '0px';
     });
+
+    //Get full width of slider
     let slider_width = 0;
     slider_elements.forEach(el => {
         slider_width += el.offsetWidth;
     });
     slider_width += getComputedStyle(slider).columnGap.slice(0,-2) * (slider_elements.length-1);
+
+    //Calculate shifts and their numbers from the screen size
     const visible_slider_screen = Number.parseInt(getComputedStyle(slider).width.slice(0,-2));
     const click_numbers = Math.ceil(slider_width/visible_slider_screen);
     const shift = Number.parseInt((slider_width - visible_slider_screen)/click_numbers);
@@ -21,10 +25,20 @@ function get_shifts(slider_class) {
     }
 };
 
-function slide_right(left_button_elem, right_button_elem) {
-    const max_shift = get_shifts('.slider_row').max_shift;
-    const shift = get_shifts('.slider_row').shift;
-    const slider_elements = get_shifts('.slider_row').slider_elements;
+
+//Need to add global variables to respond to screen size changes  
+var shift = get_shifts('.slider_row').shift;
+var max_shift = get_shifts('.slider_row').max_shift;
+var slider_elements = get_shifts('.slider_row').slider_elements;
+
+
+//Functions have been turned into handlers variable to change them after screen size changes 
+var handler_function_right = function slide_right() {
+    //Get buttons
+    const left_button_elem = document.querySelectorAll('.slider_arrow_button')[0];
+    const right_button_elem = document.querySelectorAll('.slider_arrow_button')[1];
+
+    //Check the location of the slider elements and the ability to move them to the right, if we can - move and update buttons
     slider_elements.forEach(el => {
         if(Number.parseInt(el.style.right.slice(0,-2)) <= max_shift) {
             el.style.right = `${Number.parseInt(el.style.right.slice(0, -2)) + shift}px`;
@@ -38,9 +52,14 @@ function slide_right(left_button_elem, right_button_elem) {
     });
 };
 
-function slide_left(left_button_elem, right_button_elem) {
-    const shift = get_shifts('.slider_row').shift;
-    const slider_elements = get_shifts('.slider_row').slider_elements;
+
+//Functions have been turned into handlers variable to change them after screen size changes
+var handler_function_left = function slide_left() {
+    //Get buttons
+    const left_button_elem = document.querySelectorAll('.slider_arrow_button')[0];
+    const right_button_elem = document.querySelectorAll('.slider_arrow_button')[1];
+
+    //Check the location of the slider elements and the ability to move them to the left, if we can - move and update buttons
     slider_elements.forEach(el => {
         if(Number.parseInt(el.style.right.slice(0,-2)) >= 0) {
             el.style.right = `${Number.parseFloat(el.style.right.slice(0, -2)) - shift}px`;
@@ -54,16 +73,34 @@ function slide_left(left_button_elem, right_button_elem) {
     });
 };
 
+
 function add_slider_button_functional(button_class_name) {
-    const slider_buttons = document.querySelectorAll(button_class_name);
-    if(slider_buttons.length != 0) {
-        const slider_button_left = slider_buttons[0];
-        const slider_button_right =  slider_buttons[1];
-        slider_button_right.addEventListener('click', () => slide_right(slider_button_left, slider_button_right));
-        slider_button_left.addEventListener('click', () => slide_left(slider_button_left, slider_button_right));
-    };
+    //Get buttons
+    const slider_button_left = document.querySelectorAll(button_class_name)[0];
+    const slider_button_right =  document.querySelectorAll(button_class_name)[1];
+
+    //Remove handlers if there are any (it is necessary to track the screen size) 
+    slider_button_left.removeEventListener('click', handler_function_left);
+    slider_button_right.removeEventListener('click', handler_function_right);
+
+    //Reload buttons to basic view
+    slider_button_right.classList.replace('slider_arrow_button_disabled', 'slider_arrow_button_active');
+    slider_button_right.disabled = false;
+    slider_button_left.classList.replace('slider_arrow_button_active', 'slider_arrow_button_disabled');
+    slider_button_left.disabled = true;
+
+    //Update global shift variables
+    shift = get_shifts('.slider_row').shift;
+    max_shift = get_shifts('.slider_row').max_shift;
+    slider_elements = get_shifts('.slider_row').slider_elements;
+
+    //Adding handlers
+    slider_button_right.addEventListener('click', handler_function_right);
+    slider_button_left.addEventListener('click', handler_function_left);
 };
 
-window.onload = () => {
-    add_slider_button_functional('.slider_arrow_button');
-}
+
+add_slider_button_functional('.slider_arrow_button');
+window.addEventListener('resize', () => {
+    add_slider_button_functional('.slider_arrow_button'); //If screen resize slider will be update there settings
+});

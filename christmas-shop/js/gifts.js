@@ -166,7 +166,7 @@ function parsing_json_data(json_file_name) {
     })
         .then(response => response.json())
         .then(json_data => {
-            if(window.location.pathname == '/christmas-shop/index.html') {  
+            if(window.location.pathname == '/christmas-shop/index.html' || window.location.pathname == '/christmas-shop/') {  
                 random_gifts(json_data, 4, 'best_gifts_cards_div');
             }
             else if(window.location.pathname == '/christmas-shop/gifts.html') {
@@ -215,8 +215,5 @@ function filtered_gifts_card() {
     });
 };
 
-
-window.onload = () => {
-    parsing_json_data('gifts.json');
-    filtered_gifts_card();
-}
+parsing_json_data('gifts.json');
+filtered_gifts_card();

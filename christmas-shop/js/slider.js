@@ -1,7 +1,8 @@
 // Slider animate---------------------------------------------------------------------------------------------------
 function get_shifts(slider_class) {
     //Get slider elements and set their right position
-    const slider_elements = Array.from(document.querySelector(slider_class).children);
+    const slider = document.querySelector(slider_class);
+    const slider_elements = Array.from(slider.children);
     slider_elements.forEach(el => {
         el.style.right = '0px';
     });

@@ -564,6 +564,8 @@ section {
     padding: 20px;
     border-radius: 20px;
     background-color: white;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .modal_description_div > div {
@@ -581,6 +583,7 @@ section {
 
 .modal_indicators_div p:nth-child(1) {
     flex-grow: 1;
+    text-transform: capitalize;
 }
 
 .modal_snowflakes_div {

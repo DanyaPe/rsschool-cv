@@ -1,11 +1,16 @@
 //Gifts functional-----------------------------------------------------------------------------------------------
 //Create list of all gifts
 function gift_cards_list(json_data_mas, cards_div_class_name) {
+    //Get modal-window element
     const modal = document.getElementsByClassName('gift_modal')[0];
+
+    //Initiate creating gift cards, bring json file
     json_data_mas.forEach(el => {
         const div = document.createElement('div');
         const img = document.createElement('img');
         let color_text = '';
+
+        //Defining type of card
         switch (el.category) {
             case 'For Work': 
                 div.className = 'best_gifts_card_for_work';
@@ -26,6 +31,8 @@ function gift_cards_list(json_data_mas, cards_div_class_name) {
                 color_text = '#ff43f7';
                 break;
         };
+
+        //Adding elements
         div.append(img);
         const inner_div = document.createElement('div');
         div.append(inner_div);
@@ -36,6 +43,8 @@ function gift_cards_list(json_data_mas, cards_div_class_name) {
         span2.className = 'Montserrat-Header3';
         span2.innerHTML = el.name;
         inner_div.append(span2);
+
+        //Describing modal-window functional
         div.addEventListener('click', () => {
             document.querySelector('.img_div > img').src = img.src;
             document.querySelector('.img_div > img').alt = img.alt;
@@ -43,7 +52,16 @@ function gift_cards_list(json_data_mas, cards_div_class_name) {
             document.querySelector('.modal_description_div > div > span:nth-child(1)').style.color = color_text;
             document.querySelector('.modal_description_div > div > span:nth-child(2)').textContent = el.name;
             document.querySelector('.modal_description_div > div > p').textContent = el.description;
-            document.querySelectorAll('.modal_indicators_div > p:nth-child(2)')[0].textContent = el.superpowers.live;
+            const superpowers_names = [];
+            Object.entries(el.superpowers).forEach(el => {superpowers_names.push(el)});
+            for(n = 0; n < superpowers_names.length; n++) {
+                document.querySelectorAll('.modal_indicators_div > p:nth-child(2)')[n].textContent = superpowers_names[n][1];
+                const snowflakes = document.querySelectorAll('.modal_indicators_div')[n].querySelectorAll('svg');
+                for(t = 0; t < Number(superpowers_names[n][1].slice(1,2)); t++) {
+                    snowflakes[t].setAttribute('opacity', '1');
+                };
+            };
+            /*document.querySelectorAll('.modal_indicators_div > p:nth-child(2)')[0].textContent = el.superpowers.live;
             let snowflakes = document.querySelectorAll('.modal_indicators_div')[0].querySelectorAll('svg');
             for(n = 0; n < Number(el.superpowers.live.slice(1,2)); n++) {
                 snowflakes[n].setAttribute('opacity', '1');
@@ -62,7 +80,7 @@ function gift_cards_list(json_data_mas, cards_div_class_name) {
             snowflakes = document.querySelectorAll('.modal_indicators_div')[3].querySelectorAll('svg');
             for(n = 0; n < Number(el.superpowers.dream.slice(1,2)); n++) {
                 snowflakes[n].setAttribute('opacity', '1');
-            };
+            };*/
             modal.showModal();
             document.body.classList.toggle('body_fixed');
         });

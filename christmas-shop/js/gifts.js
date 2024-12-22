@@ -114,9 +114,12 @@ function add_close_on_backdrop(modal_class_name) {
     const modal = document.getElementsByClassName(modal_class_name)[0];
     modal.addEventListener('click', (event) => {
         const check_click_on_backdrop = event.target === event.currentTarget;
-        if(check_click_on_backdrop) modal.close();
+        if(check_click_on_backdrop) {
+            close_modal_window();
+        };
     });
 };
+
 
 // Adding gifts cards from the gifts.json on js API
 function parsing_json_data(json_file_name) {

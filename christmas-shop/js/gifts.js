@@ -109,6 +109,15 @@ function close_modal_window() {
 }
 
 
+//Adding close function on backdrop click
+function add_close_on_backdrop(modal_class_name) {
+    const modal = document.getElementsByClassName(modal_class_name)[0];
+    modal.addEventListener('click', (event) => {
+        const check_click_on_backdrop = event.target === event.currentTarget;
+        if(check_click_on_backdrop) modal.close();
+    });
+};
+
 // Adding gifts cards from the gifts.json on js API
 function parsing_json_data(json_file_name) {
     fetch(json_file_name, {   
@@ -182,5 +191,6 @@ function filtered_gifts_card() {
 };
 
 
+add_close_on_backdrop('gift_modal');
 parsing_json_data('gifts.json');
 filtered_gifts_card();

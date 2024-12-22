@@ -6,6 +6,7 @@ function open_hamburger_menu() {
     document.body.classList.toggle('body_fixed');
 };
 
+//Add a timeout for the animation has time to complete 
 document.querySelectorAll('div.hamburger_menu_pop_up_div > a').forEach(el => {
     el.addEventListener('click', (event) => {
         event.preventDefault();

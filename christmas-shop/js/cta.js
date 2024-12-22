@@ -12,4 +12,5 @@ function timer() {
     document.getElementsByClassName('CTA_timer_block_number')[3].textContent = seconds;
 };
 
+
 setInterval(function() {timer()}, 1000);

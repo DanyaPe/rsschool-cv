@@ -1,2 +1,2 @@
-# **[rsschool-cv - Christmas Shop](https://danyape.github.io/rsschool-cv/christmas-shop/index.html "Link to CV")**
+# **This branch create to task "core-js-string"**
 Repo for RS School study projects

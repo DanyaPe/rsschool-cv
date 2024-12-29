@@ -1,5 +1,4 @@
 module.exports = {
-  root: true,
   env: {
     commonjs: true,
     es6: true,
@@ -23,4 +22,5 @@ module.exports = {
     ],
   },
   plugins: ['prettier'],
+  noInlineConfig: true,
 };

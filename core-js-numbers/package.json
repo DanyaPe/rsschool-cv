@@ -1,7 +1,7 @@
 {
-  "name": "core-js-strings",
+  "name": "core-js-numbers",
   "version": "1.0.0",
-  "description": "Core JS Strings",
+  "description": "Core JS Numbers",
   "main": "index.js",
   "scripts": {
     "test": "npm run lint && mocha",
@@ -10,9 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rolling-scopes-school/core-js-strings.git"
+    "url": "git+https://github.com/rolling-scopes-school/core-js-numbers.git"
   },
-  "author": "valerydluski, natein",
+  "author": "mikaleinik, valerydluski",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^8.51.0",
@@ -24,7 +24,7 @@
     "prettier": "^3.0.3"
   },
   "bugs": {
-    "url": "https://github.com/rolling-scopes-school/core-js-strings/issues"
+    "url": "https://github.com/rolling-scopes-school/core-js-numbers/issues"
   },
-  "homepage": "https://github.com/rolling-scopes-school/core-js-strings#readme"
+  "homepage": "https://github.com/rolling-scopes-school/core-js-numbers#readme"
 }

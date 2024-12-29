@@ -360,10 +360,8 @@ function countVowels(str) {
  *   isPalindrome('No lemon, no melon') => true
  */
 function isPalindrome(str) {
-  const regex = /[,.!?*&#()- ]/g;
+  const regex = /[\\,\\.\\!\\?\\*\\&\\#\\(\\)\\-\\ ]/g;
   const Str = str.replaceAll(regex, '');
-  console.log(Str);
-  console.log(reverseString(Str));
   return Str.toLocaleLowerCase() === reverseString(Str).toLocaleLowerCase();
 }
 
@@ -425,8 +423,22 @@ function reverseWords(str) {
 function invertCase(str) {
   const RegexUp = /[A-Z]/g;
   const RegexLow = /[a-z]/g;
+  const iterator = str[Symbol.iterator]();
+  let char = iterator.next();
   let Result = '';
-
+  while (char !== char.done && char.value !== undefined) {
+    if (char.value.match(RegexLow)) {
+      Result += char.value.toUpperCase();
+      char = iterator.next();
+    } else if (char.value.match(RegexUp)) {
+      Result += char.value.toLowerCase();
+      char = iterator.next();
+    } else {
+      Result += char.value;
+      char = iterator.next();
+    }
+  }
+  return Result;
 }
 
 /**
@@ -442,8 +454,8 @@ function invertCase(str) {
  *   getStringFromTemplate('John','Doe') => 'Hello, John Doe!'
  *   getStringFromTemplate('Chuck','Norris') => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {
+  return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
@@ -456,8 +468,9 @@ function getStringFromTemplate(/* firstName, lastName */) {
  *   extractNameFromTemplate('Hello, John Doe!') => 'John Doe'
  *   extractNameFromTemplate('Hello, Chuck Norris!') => 'Chuck Norris'
  */
-function extractNameFromTemplate(/* value */) {
-  throw new Error('Not implemented');
+function extractNameFromTemplate(value) {
+  const rm = value.replace('Hello, ', '');
+  return rm.replace('!', '');
 }
 
 /**
@@ -471,8 +484,9 @@ function extractNameFromTemplate(/* value */) {
  *   unbracketTag('<span>') => 'span'
  *   unbracketTag('<a>') => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag(str) {
+  const Regex = /[<>]/g;
+  return str.replace(Regex, '');
 }
 
 /**
@@ -490,8 +504,8 @@ function unbracketTag(/* str */) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  return str.split(';');
 }
 
 /**

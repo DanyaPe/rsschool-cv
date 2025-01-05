@@ -524,8 +524,40 @@ function extractEmails(str) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  const AlfUp = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const AlfLow = 'abcdefghijklmnopqrstuvwxyz';
+  const sentence = str.split(' ');
+  let result = '';
+  sentence.forEach((el) => {
+    let cipher = '';
+    const iterator = el[Symbol.iterator]();
+    let char = iterator.next();
+    while (char !== char.done && char.value !== undefined) {
+      if (AlfUp.includes(char.value)) {
+        if (AlfUp.indexOf(char.value) + 13 >= AlfUp.length) {
+          cipher += AlfUp[AlfUp.indexOf(char.value) + 13 - AlfUp.length];
+          char = iterator.next();
+        } else {
+          cipher += AlfUp[AlfUp.indexOf(char.value) + 13];
+          char = iterator.next();
+        }
+      } else if (AlfLow.includes(char.value)) {
+        if (AlfLow.indexOf(char.value) + 13 >= AlfLow.length) {
+          cipher += AlfLow[AlfLow.indexOf(char.value) + 13 - AlfLow.length];
+          char = iterator.next();
+        } else {
+          cipher += AlfLow[AlfLow.indexOf(char.value) + 13];
+          char = iterator.next();
+        }
+      } else {
+        cipher += char.value;
+        char = iterator.next();
+      }
+    }
+    result = result.concat(' ', cipher);
+  });
+  return result.slice(1);
 }
 
 /**
@@ -552,8 +584,62 @@ function encodeToRot13(/* str */) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  const deck = [
+    'A♣',
+    '2♣',
+    '3♣',
+    '4♣',
+    '5♣',
+    '6♣',
+    '7♣',
+    '8♣',
+    '9♣',
+    '10♣',
+    'J♣',
+    'Q♣',
+    'K♣',
+    'A♦',
+    '2♦',
+    '3♦',
+    '4♦',
+    '5♦',
+    '6♦',
+    '7♦',
+    '8♦',
+    '9♦',
+    '10♦',
+    'J♦',
+    'Q♦',
+    'K♦',
+    'A♥',
+    '2♥',
+    '3♥',
+    '4♥',
+    '5♥',
+    '6♥',
+    '7♥',
+    '8♥',
+    '9♥',
+    '10♥',
+    'J♥',
+    'Q♥',
+    'K♥',
+    'A♠',
+    '2♠',
+    '3♠',
+    '4♠',
+    '5♠',
+    '6♠',
+    '7♠',
+    '8♠',
+    '9♠',
+    '10♠',
+    'J♠',
+    'Q♠',
+    'K♠',
+  ];
+  return deck.indexOf(value);
 }
 
 module.exports = {

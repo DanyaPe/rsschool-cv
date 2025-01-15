@@ -12,7 +12,7 @@ module.exports = {
     SharedArrayBuffer: 'readonly',
   },
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 2022,
   },
   rules: {
     'prettier/prettier': [
@@ -23,4 +23,6 @@ module.exports = {
     ],
   },
   plugins: ['prettier'],
+  ignorePatterns: ['extensions/utility.js'],
+  noInlineConfig: true,
 };

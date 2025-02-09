@@ -1,10 +1,14 @@
+const { CONSTANTS } = require('./constants.js');
+
+const { SPECIAL_PROP_VALUE } = CONSTANTS;
+
 function testOptional(title, fn, isAsyncTest) {
   if (isAsyncTest) {
     it(title, function test(done) {
       try {
         fn.call(this, done);
       } catch (err) {
-        if (err.message === 'Not implemented') {
+        if (err._specialProp === SPECIAL_PROP_VALUE) {
           this.test.skip();
         } else {
           throw err;
@@ -16,7 +20,7 @@ function testOptional(title, fn, isAsyncTest) {
       try {
         fn.call(this);
       } catch (err) {
-        if (err.message === 'Not implemented') {
+        if (err._specialProp === SPECIAL_PROP_VALUE) {
           this.test.skip();
         } else {
           throw err;
@@ -26,4 +30,6 @@ function testOptional(title, fn, isAsyncTest) {
   }
 }
 
-module.exports = testOptional;
+module.exports = {
+  testOptional
+};

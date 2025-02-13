@@ -1,2 +1,1 @@
-# rsschool-cv
-Repo for RS School study projects
+# **The branch contains a [resume](https://danyape.github.io/rsschool-cv/cv "Link to resume") file in markdown format**

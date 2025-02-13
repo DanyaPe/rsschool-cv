@@ -1,1 +1,1 @@
-# **[rsschool-cv](https://danyape.github.io/rsschool-cv/ "Link to CV")**
+# **The branch contains a [resume](https://danyape.github.io/rsschool-cv/cv "Link to resume") file in markdown format**

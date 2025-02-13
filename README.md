@@ -1,2 +1,2 @@
-# **[rsschool-cv - Christmas Shop](https://danyape.github.io/rsschool-cv/christmas-shop/index.html "Link to CV")**
+# **[rsschool-cv - Christmas Shop](https://danyape.github.io/rsschool-cv/christmas-shop/index.html "Link to site")**
 Repo for RS School study projects

@@ -1,8 +1,8 @@
 //CTA Timer functional-------------------------------------------------------------------------------------------
 function timer() {  
-    const new_year_date = new Date(2025, 0, 0, 0, 0, 0);
+    const new_year_date = new Date(new Date().getFullYear() + 1, 0, 0, 0, 0, 0);
     const delta = new_year_date - new Date();
-    const days = Math.floor((delta/(1000*60*60*24))%30);
+    const days = Math.floor((delta/(1000*60*60*24)));
     const hours = Math.floor((delta/(1000*60*60))%24);
     const minutes = Math.floor((delta/(1000*60))%60);
     const seconds = Math.floor((delta/(1000))%60);

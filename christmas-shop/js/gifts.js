@@ -132,7 +132,7 @@ function parsing_json_data(json_file_name) {
     })
         .then(response => response.json())
         .then(json_data => {
-            if(window.location.pathname == '/christmas-shop/index.html' || window.location.pathname == '/christmas-shop/') {  
+            if(/christmas-shop\/index.html/.test(window.location.pathname) || /christmas-shop\/$/.test(window.location.pathname)) {  
                 const numbers_mas = [];
                 while(numbers_mas.length < 4) {
                     const el_number = Math.floor(Math.random() * (json_data.length - 1));
@@ -144,7 +144,7 @@ function parsing_json_data(json_file_name) {
                     document.getElementsByClassName('best_gifts_cards_div')[0].append(create_cards_and_modal_window(el_data));
                 };
             }
-            else if(window.location.pathname == '/christmas-shop/gifts.html') {
+            else if(/christmas-shop\/gifts.html/.test(window.location.pathname)) {
                 json_data.forEach(el_data => {
                     document.getElementsByClassName('best_gifts_cards_div')[0].append(create_cards_and_modal_window(el_data));
                 });

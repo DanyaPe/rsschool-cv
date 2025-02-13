@@ -1,4 +1,4 @@
-# This branch create to tsk "BasicJS"
+# This branch create to task "BasicJS"
 
 ⚠️ DO NOT SUBMIT PULL REQUESTS TO THIS REPO ⚠️
 

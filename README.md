@@ -1,2 +1,2 @@
 # **This branch create to task "core-js-string"**
-Repo for RS School study projects
+The code is written in the file 'core-js-conditions-n-loops-tasks/src/conditions-n-loops-tasks.js'

@@ -1,2 +1,2 @@
 # **This branch create to task "core-js-string"**
-Repo for RS School study projects
+The code is written in the file 'core-js-string/src/string-tasks.js'

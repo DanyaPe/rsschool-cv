@@ -1,0 +1,19 @@
+@media (min-width: 1025px) {
+}
+
+@media (min-width: 425px) and (max-width: 1024px) {
+}
+
+@media (max-width: 425px) {
+    .gifts_section_menu {
+        gap: 0;
+        padding: 0;
+    }
+
+    .gifts_section_menu a {
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}

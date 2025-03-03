@@ -1,2 +1,4 @@
-# **This branch create to task "Christmas shop"**
-The Christmas shop project is a website for presentation of a Christmas gift shop. The project uses basic slider animations, anchor links, and modal windows for list of gifts. Adaptive design for different devices is also implemented.
+# **This is a main branch of self represantaion repo**
+Here you can find links to my personal portfolio, and a project of "Christmas Shop", which uses basic frontend development technologies. 
+[Christmas Shop](https://danyape.github.io/rsschool-cv/christmas-shop/index.html "Link to pet-project")
+[CV](https://danyape.github.io/rsschool-cv/cv.md "Link to CV")
